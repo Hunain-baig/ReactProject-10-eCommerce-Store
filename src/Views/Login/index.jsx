@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { login } from '../../Config/firebase';
 import { useNavigate } from 'react-router-dom';
+import { signInWithGoogle } from '../../Config/firebase';
 
 function Login() {
   const[email,setEmail] = useState()
@@ -20,6 +21,8 @@ function Login() {
   const navToRegiter = ()=>{
     navigate("/register")
   }
+
+  
 
 
  return (
@@ -55,12 +58,20 @@ function Login() {
              className="w-full px-3 py-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-400 bg-slate-100"
            />
          </div>
-         <div className="flex items-center justify-center">
+         <div className="flex items-center justify-center gap-5">
            <button
              onClick={() => signIn()}
-             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mt-8"
+             className="btn btn-info mt-6  text-white"
            >
              Login
+           </button>
+         </div>
+         <div className="flex items-center justify-center mt-4">
+           <button
+             onClick={() => signInWithGoogle()}
+             className="btn btn-error text-white"
+           >
+             Sign in with Google
            </button>
          </div>
          <div className="mt-4 text-lg text-center text-gray-600">

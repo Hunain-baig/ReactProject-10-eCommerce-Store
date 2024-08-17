@@ -22,7 +22,7 @@ export default function Navbar() {
         await signOut(auth);
         navigate("/login");
       } catch (error) {
-        alert("Ops! somehting went wrong")
+        alert(error.message,"Ops! somehting went wrong")
       }
    }
 

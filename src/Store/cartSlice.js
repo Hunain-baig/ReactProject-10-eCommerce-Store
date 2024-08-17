@@ -6,6 +6,7 @@ const initialState = {
 
 
 
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -23,6 +24,7 @@ export const cartSlice = createSlice({
           // If the item doesn't exist, set the quantity to 1 and add the item to the cart
           data.payload.quantity = 1;
           state.cart.push(data.payload); // Push the new item into the cart array
+          
         }
       } else {
         // If the cart is empty, add the item with a quantity of 1

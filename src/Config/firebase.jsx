@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -34,6 +36,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
+const provider = new GoogleAuthProvider();
+
 
 
 async function register(userRegistration) {
@@ -87,5 +91,10 @@ async function singleProduct(id) {
 }
 
 
+const signInWithGoogle = ()=>{
+signInWithPopup(auth, provider)
+}
 
-export { register, login , addProduct, getProducts,singleProduct,auth,onAuthStateChanged,signOut };
+
+
+export { register, login , addProduct, getProducts,singleProduct,auth,onAuthStateChanged,signOut,signInWithGoogle };
