@@ -44,7 +44,7 @@ function Cart() {
           </tr>
         </thead>
         {/* Table Body */}
-        {cart.map((item) => (
+        {cart.map((item) => (  
           <tbody key={item.id}>
             <tr>
               <td>

@@ -22,7 +22,7 @@ function NewProduct() {
     };
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-8 mt-5">
       {products.map((item) => (
         <div
           key={item.id}
